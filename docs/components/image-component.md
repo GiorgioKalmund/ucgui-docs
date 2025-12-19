@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: ImageComponent
-description: Uses Unity's UI.Image to display sprites.
+description: Uses Unity's UI.Image to display sprites
 ---
 
 > extends [GraphicComponent\<ImageComponent\>]() implements [ICopyable\<ImageComponent\>]()
