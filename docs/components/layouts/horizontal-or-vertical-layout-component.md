@@ -14,7 +14,7 @@ shared properties.
 
 ## References
 
-This component referenced or inherited by: [`HStackComponent`](./hstack-component.md), [`VStackComponent`](./vstack-component.md), [`SwitchLayoutComponent`]()
+This component is referenced or inherited by: [`HStackComponent`](./hstack-component.md), [`VStackComponent`](./vstack-component.md), [`SwitchLayoutComponent`]()
 
 
 ## Implementation

@@ -43,7 +43,7 @@ UI.Text("Hello, Mercury!")
 
 ## References
 
-This component referenced or inherited by: [`LabelComponent`](), [`InputComponent`]().
+This component is referenced by: [`LabelComponent`](./label-component.md), [`InputComponent`]().
 
 
 ## Implementation

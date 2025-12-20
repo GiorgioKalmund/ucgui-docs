@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: LabelComponent
-description: Flexible text with an attached graphic.
+description: Flexible text with an attached graphic
 ---
 
 > extends [SwitchLayoutComponent\<LabelComponent\>](), [IStylable\<LabelComponent, LabelStyle\>](), [ICopyable\<LabelComponent\>]()
@@ -53,9 +53,13 @@ label.text.Text("Hello, Mercury!");
 :::note
 
 The initializer for `UI.Label()` supports both `Sprite` and `Texture2D`, as well as
-no image at all!
+no image at all
 
 :::
+
+## References
+
+This component is referenced or inherited by: [`ButtonComponent`](./button-component.md).
 
 ## Implementation
 

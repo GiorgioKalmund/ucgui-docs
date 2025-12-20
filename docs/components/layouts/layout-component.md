@@ -13,7 +13,7 @@ UCGUI.
 
 ## References
 
-This component referenced or inherited by: [`HorizontalOrVerticalLayoutComponent`](./horizontal-or-vertical-layout-component.md), [`GridComponent`]().
+This component is referenced or inherited by: [`HorizontalOrVerticalLayoutComponent`](./horizontal-or-vertical-layout-component.md), [`GridComponent`]().
 
 
 ## Implementation
