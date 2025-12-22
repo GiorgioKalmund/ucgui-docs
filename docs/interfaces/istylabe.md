@@ -56,7 +56,7 @@ fooTitle.Style(PlainTitle);
 
 ## References
 
-This interface is implemented by: [`TextComponent`](../components/text-component.md), [`LabelComponent`](../components/label-component.md), [`ButtonComponent`](../components/layouts/button-component.md), [`InputComponet`]().
+This interface is implemented by: [`TextComponent`](../components/text-component.md), [`LabelComponent`](../components/label-component.md), [`ButtonComponent`](../components/layouts/button-component.md), [`InputComponent`](../components/input-component.md), [`SliderComponent`](../components/slider-component.md).
 
 ## Implementation
 

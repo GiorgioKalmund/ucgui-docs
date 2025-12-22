@@ -159,3 +159,61 @@ via `Awake` or during the configuring phase, allowing you to now act based on th
 state.
 
 :::
+
+## Displaying Components
+
+No that we know some more about the inner workings of how UCGUI deals with components let's actually create a small complete interface.
+
+Similar to how MonoBehaviours need to be attached to some GameObject using the edidtor, we need some point of reference which acts as a sort of "parent component".\
+This is what [Screens]() are for. They a meant to act as a foundation and the upmost element of a hierarchy. All other components we create will most likely be parented 
+to a screen or to its children.
+
+Let's start:
+
+```csharp title="Quickstart Example"
+using UCGUI;
+using UnityEngine;
+
+public class MyScreen : SimpleScreen
+{
+    TextComponent title;
+    // Called during 'Awake'
+    public override void Create()
+    {
+        title = UI.Text("Hello")
+                  .Parent(this);
+        
+        ImageComponent image = UI.Image(ImageService.GetSprite("penguin"))
+                                 .OffsetY(-100)
+                                 .Parent(title);
+        
+        // ... Create more UI here
+    }
+    
+    // Called during 'Start'
+    public override void Initialize()
+    {
+        // ... Additionally configure your UI here
+        title.Text(", World!", TextMode.Additive);
+    }
+    
+    // Every screen has a direct reference to the Canvas (`canvas`) 
+    // it is attached to, allowing quick access for `Parent()`.
+    // This function initializes the variable with the return value
+    public override Canvas GetCanvas()
+    {
+        return GetComponentInParent<Canvas>();
+    }
+}
+```
+
+If we now attach our `MyScreen.cs` script to an element in the canvas hierarchy our
+UI will build as soon as we enter Play mode.
+
+Our hierary would then look something like this:
+```title="Hierarchy Example"
+Canvas 
+└─ MyScreen (SimpleScreen.cs on i.e. an Empty)
+   └─ TextComponent ("Hello, World!")
+      └─ ImageComponent (penguin)
+```
