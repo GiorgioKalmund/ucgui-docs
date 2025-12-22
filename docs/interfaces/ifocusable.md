@@ -126,7 +126,7 @@ focus.Next(); // invokes 'HandleFocus' in 'tab3', sets Value to 'Profile'
 
 ## References
 
-This interface is implemented by: [`ButtonComponent`](../components/layouts/button-component.md), [`InputComponet`]().
+This interface is implemented by: [`ButtonComponent`](../components/button-component.md), [`InputComponet`](../components/input-component.md).
 
 ## Implementation
 
