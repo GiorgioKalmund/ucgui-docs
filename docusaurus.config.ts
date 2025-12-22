@@ -65,7 +65,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/ucgui-social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -98,6 +98,10 @@ const config: Config = {
             {
               label: 'Tutorial',
               to: '/docs/intro',
+            },
+            {
+              label: 'Quickstart',
+              to: '/docs/getting-started/quickstart',
             },
           ],
         },
@@ -133,7 +137,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Giorgio Kalmund. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.palenight,

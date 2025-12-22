@@ -35,7 +35,7 @@ To add your elements into a spot in the hierarchy you can use the `.Parent(paren
 builder attachment. Otherwise your component will be created but it will not be
 attached to its correct spot in the canvas and not be visible in most cases.
 
-More on configuration [later](#configuration).
+More on configuration [later](#configuring-components).
 
 :::
 
@@ -43,7 +43,7 @@ More on configuration [later](#configuration).
 
 These pre-configured builders are good and all but if you have custom elements these
 built-in functions won't cut it. \
-For anything [custom](#creation), *assuming you also didn't write your own builder*, use the 
+For anything [custom](#defining-custom-components), *assuming you also didn't write your own builder*, use the 
 more 'low-level' function `UI.N<T>()`. This function takes in any `BaseComponent` (the
 base of all other elements, similar to how `MonoBehaviour` is used for regular Unity 
 scripts) and instantiates it. 
@@ -65,7 +65,7 @@ configuration behind the scenes.
 :::
 
 
-## Configuring Components <a name="configuration"></a>
+## Configuring Components 
 
 UCGUI heavily leans into the [Fluent Interface](https://en.wikipedia.org/wiki/Fluent_interface)
 style of creating and configuring components. This allows for maximal control over 
@@ -83,7 +83,6 @@ anchors, pivots and more.
 Many native components also have such functions as part of their class for even more
 component-specific configuration.
 
-<a name="config-example"></a>
 ```csharp title="Configuration"
 TextComponent title = UI.Text("Hello, Title!")
                         .FontSize(72) // TextComponent
@@ -96,7 +95,7 @@ TextComponent title = UI.Text("Hello, Title!")
 Multiple functions from different levels of the element hierarchy can be applied a single 
 instantiation to easily configure your element. 
 
-Taking a closer look at the [example above](#config-example) we can see that different
+Taking a closer look at the example above we can see that different
 functions come from differnt contexts. As in this case the native `TextComponent` inherits
 from `GraphicComponent` we can also use its respective methods such as `Color(UnityEngine.Color)`,
 `Alpha(float)` and some more. \
@@ -113,7 +112,7 @@ You can cast the the component back up to its desired class using `.Cast<T>()`.
 :::
 
 
-## Defining Custom Components <a name="creation"></a>
+## Defining Custom Components
 
 Creating a custom component is as easy as creating any other regular `MonoBehaviour`.
 Let's take a look a small exercept:
@@ -151,7 +150,7 @@ Let's take a look at the relevant parts for us:
 1. `Awake()` is called first. That is why this is where you optimally initialize all of your 
 local variables and create any subcomponents your element might require.
 
-2. [The configuration](#configuration) of your elements occurs **AFTER** `Awake` and
+2. [The configuration](#configuring-components) of your elements occurs **AFTER** `Awake` and
 **BEFORE** `Start`. This is crucial to understand the timings for your UI.
 
 3. `Start()` is called last. During this phase all variables have been initialized, either

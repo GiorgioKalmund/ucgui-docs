@@ -9,7 +9,7 @@ description: Abstract base for a variety of directional layouts in UCGUI
 > _abstract_
 
 The HorizontalOrVerticalLayoutComponent builds on top of the basic [LayoutComponent](./layout-component.md)
-to provide a base for the [HStackComponent]() and [VStackComponent](), unifying their 
+to provide a base for the [HStackComponent](hstack-component.md) and [VStackComponent](vstack-component.md), unifying their 
 shared properties.
 
 ## References

@@ -4,7 +4,7 @@ title: LabelComponent
 description: Flexible text with an attached graphic
 ---
 
-> extends [SwitchLayoutComponent\<LabelComponent\>]() implements [IStylable\<LabelComponent, LabelStyle\>](), [ICopyable\<LabelComponent\>]()
+> extends [SwitchLayoutComponent\<LabelComponent\>]() implements [IStylable\<LabelComponent, LabelStyle\>](../interfaces/istylabe.md), [ICopyable\<LabelComponent\>](../interfaces/icopyable.md)
 
 ## Description
 

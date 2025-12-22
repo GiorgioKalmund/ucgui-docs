@@ -4,7 +4,7 @@ title: ButtonComponent
 description: A simple button based on the LabelComponent
 ---
 
-> extends [LabelComponent](./label-component.md) implements [IStylable\<ButtonComponent, ButtonStyle\>](), [ICopyable\<ButtonComponent\>](../interfaces/icopyable.md), [IFocusable]()
+> extends [LabelComponent](./label-component.md) implements [IStylable\<ButtonComponent, ButtonStyle\>](../interfaces/istylabe.md), [ICopyable\<ButtonComponent\>](../interfaces/icopyable.md), [IFocusable](../interfaces/icopyable.md)
 
 ## Description
 

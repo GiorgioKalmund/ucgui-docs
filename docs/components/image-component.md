@@ -42,8 +42,8 @@ UI.Image(_sprite)
 
 ## References
 
-This component is referenced or inherited by: [`AbstractViewComponent`](), [`InputComponent`](), 
-[`LabelComponent`](), [`LayoutComponent`](./layouts/layout-component.md), [`ScrollViewComponent`](), [`SliderComponent`]().
+This component is referenced or inherited by: [`AbstractViewComponent`](), [`InputComponent`](input-component.md), 
+[`LabelComponent`](./label-component.md), [`LayoutComponent`](./layouts/layout-component.md), [`ScrollViewComponent`](), [`SliderComponent`](slider-component.md).
 
 ## Implementation
 

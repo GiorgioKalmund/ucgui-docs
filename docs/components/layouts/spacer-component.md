@@ -3,7 +3,7 @@ title: SpacerComponent
 description: A flexible space that expands along the axis of its containing stack layout.
 ---
 
-> extends [BaseComponent]() implementes [IEnabled](), [IRenderable]()
+> extends [BaseComponent]() implementes [IEnabled](../../interfaces/irenderable.md), [IRenderable](../../interfaces/icopyable.md)
 
 ## Description
 
@@ -11,7 +11,7 @@ The Spacer is a very simple but powerful component. It takes the maximum space p
 If there are multiple Spacers within the same stack, they share the remaining distance **equally** between them.
 
 Spacers act based on their configured [ISpacerBehaviour]().\
-For example the [HorizontalSpacerBehaviour]() is applied to a spacer inside of an `HStack`, the [VerticalSpacerBehaviour]() for when it is insde a `VStack`. This normally happens automatically but you can also set your behaviour yourself with `.SetBehaviour(ISpacerBehaviour)`. \
+For example the `HorizontalSpacerBehaviour` is applied to a spacer inside of an [HStack](hstack-component.md), the `VerticalSpacerBehaviour` for when it is insde a [VStack](vstack-component.md). This normally happens automatically but you can also set your behaviour yourself with `.SetBehaviour(ISpacerBehaviour)`. \
 The Spacer will then call its behaviour's `.Apply()` function, which makes the Spacer properly behave according to its envrionment.
 
 `VerticalSpacerBehaviour` and `HorizontalSpacerBehaviour` or supported natively seamlessly work with the `HStack` and `VStack`, respectively. Whenever you call `LayoutBuilder.Spacer()` the new spacer will choose the appropriate behaviour on its own if non is manually set beforehand.

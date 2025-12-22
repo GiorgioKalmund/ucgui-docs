@@ -24,7 +24,7 @@ myButton.Enabled(false); // invokes the button-specific implementation
 ## References
 
 This interface is implemented by: [`GraphicComponent`](), [`AbstractViewComponent`](),
-[`LayoutComponent`](), [`ScrollViewComponent`](), [`SpacerComponent`](../components/layouts/spacer-component.md).
+[`LayoutComponent`](../components/layouts/layout-component.md), [`ScrollViewComponent`](), [`SpacerComponent`](../components/layouts/spacer-component.md).
 
 
 
