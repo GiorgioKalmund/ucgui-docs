@@ -4,7 +4,7 @@ title: LabelComponent
 description: Flexible text with an attached graphic
 ---
 
-> extends [SwitchLayoutComponent\<LabelComponent\>](), [IStylable\<LabelComponent, LabelStyle\>](), [ICopyable\<LabelComponent\>]()
+> extends [SwitchLayoutComponent\<LabelComponent\>]() implements [IStylable\<LabelComponent, LabelStyle\>](), [ICopyable\<LabelComponent\>]()
 
 ## Description
 
@@ -15,7 +15,7 @@ As it extends the [SwitchLayout]() text and image can be arranged both verticall
 and horizontally, as well as reverse their order. It also automatically fits to its content
 in both directions. 
 
-There some native `LabelStyle`s which allow for easy customization:
+There some native `LabelStyle`s which allow for [easy customization](../interfaces/istylabe.md):
 1. `IconAndText` (Default)
 2. `IconOnly` 
 3. `TextOnly` 

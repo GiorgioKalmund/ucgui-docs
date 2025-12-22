@@ -4,7 +4,7 @@ title: ImageComponent
 description: Uses Unity's UI.Image to display sprites
 ---
 
-> extends [GraphicComponent\<ImageComponent\>]() implements [ICopyable\<ImageComponent\>]()
+> extends [GraphicComponent\<ImageComponent\>]() implements [ICopyable\<ImageComponent\>](../interfaces/icopyable.md)
 
 
 ## Description

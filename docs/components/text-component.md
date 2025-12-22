@@ -4,7 +4,7 @@ title: TextComponent
 description: Based on TextMeshPro
 ---
 
-> extends [GraphicComponent\<TextComponent\>]() implements [ICopyable\<TextComponent\>](), [IStylable\<TextComponent\>]()
+> extends [GraphicComponent\<TextComponent\>]() implements [ICopyable\<TextComponent\>](../interfaces/icopyable.md), [IStylable\<TextComponent\>]()
 
 ## Description
 
