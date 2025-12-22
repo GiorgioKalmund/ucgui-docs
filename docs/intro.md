@@ -31,7 +31,7 @@ The main benefit comes from inherent code-based control over your UI at runtime,
 
 :::tip 
 
-
+To get right into it, visit the [quickstart](./getting-started/quickstart.md) page.
 
 :::
 

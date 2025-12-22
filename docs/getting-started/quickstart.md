@@ -7,6 +7,8 @@ description: Getting to know the basic workflow with UCGUI
 Welcome to this little quickstart section.\
 This part will be about some basic design and interaction concepts for UCGUI.
 
+First, make sure you have UCGUI [installed](../getting-started/installation.md).
+
 ## Instantiating Components
 
 UCGUI offers multiple ways to instantiate your components.

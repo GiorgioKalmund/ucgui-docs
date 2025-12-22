@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'UCGUI Docs',
+  title: 'UCGUI',
   tagline: 'A code-based User Interface for Unity',
   favicon: 'img/favicon.ico',
 
@@ -94,7 +94,7 @@ const config: Config = {
       links: [
         {
           title: 'Docs',
-          items: [
+         items: [
             {
               label: 'Tutorial',
               to: '/docs/intro',
@@ -102,6 +102,10 @@ const config: Config = {
             {
               label: 'Quickstart',
               to: '/docs/getting-started/quickstart',
+            },
+            {
+              label: 'List of Components',
+              to: '/docs/category/components',
             },
           ],
         },
