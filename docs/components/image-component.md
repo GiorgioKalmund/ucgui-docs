@@ -12,6 +12,13 @@ description: Uses Unity's UI.Image to display sprites
 The ImageComponent is one of the foundational elements of UCGUI.\
 It makes use of the [UnityEngine.UI.Image](https://docs.unity3d.com/2018.2/Documentation/ScriptReference/UI.Image.html) and offers all kinds of customization options, similar to what you would expect to be able to do with it in the editor.
 
+:::tip
+
+Take a look at the [ImageService](../services/image-service.md) to programatically load
+sprites into your user interface.
+
+:::
+
 ## Properties
 
 ### DefaultSize
