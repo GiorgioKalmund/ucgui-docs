@@ -142,6 +142,8 @@ class MyCustomComponent : BaseComponent {
 As you can see, creating a custom component is as easy as it looks. Simply inherit from 
 `BaseComponent` and start overriding Unity's lifecycle methods!
 
+### Interacting with the Unity Lifecycle
+
 :::important
 
 It is important to understand how [Unity's lifecycle](https://docs.unity3d.com/6000.3/Documentation/Manual/execution-order.html)

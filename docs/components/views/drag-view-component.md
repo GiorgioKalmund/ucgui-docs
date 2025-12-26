@@ -1,0 +1,87 @@
+---
+sidebar_position: 3
+title: DragViewComponent
+description: A view which be dragged around, optionally inside a confined area
+---
+
+> extends [AbstractViewComponent](./abstract-view-component.md) 
+
+## Description
+
+The DragViewComponent is a simple view which can additionally be dragged around in a confined, or unconfined area.
+It acts just like an [empty view](./abstract-view-component.md) otherwise.
+
+Simply make use of the `Bounds` function to create an arbitrarily sized and position rectangle which act as bounds for movement.
+By default the DragView will collide on all four sides directly and thus cannot cross the border in any direction.
+
+## Examples
+
+For a simple and non-reusable view, there is a built-in shorthand.
+We can simply add a 'Drag' prefix to an existing view builder to make it draggable:
+
+```csharp title="Simple UI Builder"
+// anonymous view
+UI.DragView(canvas, v => { // optionally directly link to canvas
+    v.Add(
+        UI.Image(_iceCreamCone)
+            .Pivot(PivotPosition.UpperLeft)
+            .Offset(20, -20)
+        ,
+        UI.Text("Sam's Ice Cream")
+            .Pivot(PivotPosition.UpperLeft, true)
+            .Offset(120, -20),
+        // ...
+    );
+}).Size(_width, _height);
+```
+However for more complex and reusable scenarios you might want to store the contents somewhere in a dedicated class:
+
+```csharp title="Custom View Example"
+using UCGUI;
+
+class MyViewComponent : DragViewComponent
+{
+    private TextComponent title
+    private string titleString = "<no title>";
+
+    // create initial configuration
+    public override void CreateView() { 
+        base.CreateView(); // always call base first
+
+        ImageComponent iceLogo = UI.Image(_iceCreamCone)
+            .Pivot(PivotPosition.UpperLeft)
+            .Offset(20, -20)
+            .Parent(this);
+
+        UI.Text(titleString)
+            .Pivot(PivotPosition.MiddleLeft, true)
+            .OffsetX(20)
+            .Parent(iceLogo);
+
+        // ...
+
+        this.Size(600, 800);
+    }
+    
+    // called every time the view opens
+    public override void Render() { 
+        // even though the DragViewComponent render call is empty, 
+        // it is good habit to call it here in case it changed
+        base.Render(); 
+
+        titleString = GetTitleString();
+        title.Text(titleString);
+    }
+}
+```
+
+
+## Implementation
+
+<div align="center">
+:::note
+
+[**DragViewComponent.cs**](https://www.github.com/GiorgioKalmund/UCGUI/tree/main/Runtime/Components/DragViewComponent.cs)
+
+::: 
+</div>
