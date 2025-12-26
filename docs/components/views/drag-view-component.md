@@ -17,7 +17,7 @@ By default the DragView will collide on all four sides directly and thus cannot 
 ## Examples
 
 For a simple and non-reusable view, there is a built-in shorthand.
-We can simply add a 'Drag' prefix to an existing view builder to make it draggable:
+If you already have existing static views simply add a 'Drag' prefix to the builder to make it draggable:
 
 ```csharp title="Simple UI Builder"
 // anonymous view
@@ -66,7 +66,7 @@ class MyViewComponent : DragViewComponent
     // called every time the view opens
     public override void Render() { 
         // even though the DragViewComponent render call is empty, 
-        // it is good habit to call it here in case it changed
+        // it is good habit to call it here in case it changes
         base.Render(); 
 
         titleString = GetTitleString();
