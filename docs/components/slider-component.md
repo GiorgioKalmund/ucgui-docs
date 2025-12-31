@@ -8,22 +8,36 @@ description: Configurable slider based on Unity's Slider component
 
 ## Description
 
-The SliderComponent is quite simple as it, like the [InputComponent](./input-component.md) simply tries to mirror what the native uGUI functionaly offers with some additional 
+The SliderComponent is quite simple as it, simimlar to the [InputComponent](./input-component.md), simply tries to mirror what the native uGUI functionaly offers with some additional 
 configuration options.
 
 You can customize the `background`, `foreground` and `handle`, as well as 
-configure `MaxValue` and `MinValue` for your range. \
-For a basic slider it is probably better to just use the [provided builder](#examples) with a [`SliderStyle`](../interfaces/istylabe.md).
+configure `MaxValue` and `MinValue` for your range.
+
+For a basic slider simlpy use the [provided builder](#examples) with your custom [`SliderStyle`](../interfaces/istylabe.md)!
+
+:::important
+
+If the range of the slider is incorrectly ordererd (min value is larger than max) the range will automatically be 
+flipped.
+
+:::
  
 ## Examples
 
 ```csharp title="Simple UI Builder"
 SliderComponent slider = UI.Slider(new Range(0, 1), builder =>
 {
-    // optionally configure your slider here
+    // optionally style your slider here ...
+    builder.Foreground(_fillSprite);
+    builder.Background(_backgroundSprite);
+    builder.Handle(_handleSprite);
+
+    // ... and modify its behaviour
+    builder.IntegerSteps(); 
 }, newVal =>
 {
-    // on value change callback
+    // optional on value changed callback
 })
 .Parent(canvas);
 
