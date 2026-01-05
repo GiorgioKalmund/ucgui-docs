@@ -64,6 +64,9 @@ const config: Config = {
   ],
 
   themeConfig: {
+      metadata: [
+	  {name: 'algolia-site-verification', content: '2DC81C7794A5EBEA'}
+      ],
     // Replace with your project's social card
     image: 'img/ucgui-social-card.png',
     colorMode: {
