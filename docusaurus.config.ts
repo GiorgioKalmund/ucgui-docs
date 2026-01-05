@@ -78,7 +78,7 @@ const config: Config = {
       // Public API key: it is safe to commit it
       apiKey: '016f64c7fb5b0af8f1c581c936800902',
 
-      indexName: 'Documentation Website UCGUI',
+      indexName: 'crawler_UCGUI Docs 2',
 
       // Optional: see doc section below
       //contextualSearch: true,
