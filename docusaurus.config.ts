@@ -62,7 +62,6 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
   themeConfig: {
       metadata: [
 	  {name: 'algolia-site-verification', content: '2DC81C7794A5EBEA'}
@@ -82,7 +81,7 @@ const config: Config = {
       indexName: 'Documentation Website UCGUI',
 
       // Optional: see doc section below
-      contextualSearch: true,
+      //contextualSearch: true,
 
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
       //externalUrlRegex: 'external\\.com|domain\\.com',
