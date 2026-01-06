@@ -17,6 +17,7 @@ also referred to as the 'FocusGroup'. All  components which share the same Focus
 The idea of FocusGroup is that at any point in time there can only be **exactly one** member which is the 'focused' one. Whenever another members wants to be focused the 
 previously focused element will first be unfocused and then the new element will be focused. Behind the scenes the reference to the focused element in the map for the respective FocusGroup will also be adjusted to properly reflect the new state.
 
+### Requirements
 To conform to this interface members have to implement the following members:
 
 1. `string FocusGroup` - The group the element is part of.
@@ -59,19 +60,24 @@ value. This allows for easy control the internal FocusGroup's active member: sim
 'Value' to the new desired enum member and the corresponding `IFocusable` is focused.
 This also works vice versa.
 
-Additionally FocusStates have the `Next()` and `Previous()` functions which all you to 
-easily cycle through the bound members. The order is defined by the order you add the 
-elements to the FocusState.\
-These function cycle to a `null` value after the element is reached before wrapping 
-back around, but you can call them with *false* to skip the null cycle and directly 
-re-focus the first element.
-
 :::important
 
 When joining a FocusState a member's FocusGroup is automatically assigned based on a unique identifier. 
 There is no need to unify the members into a separate group manually!
 
 :::
+
+### Cycling Through States
+Additionally FocusStates have the `Next()` and `Previous()` functions which all you to 
+easily cycle through the bound members. The order is defined by the order you add the 
+elements to the FocusState.
+
+Additionally, an optional `TransitionMode`s can be specified to adjust the 
+forward and backward cycling behaviour:
+
+1. `Simple` - Cycles through every element in the state until either the left or right border has been hit.
+2. `Loop` - Cycles through every element in the state, looping around to the opposite border after it has been hit.
+3. `LoopWithNull` - Cycles through every element in the state. After a border has been hit the state will first set its value to `null` before looping back to the opposite border.
 
 :::note 
 
@@ -122,6 +128,7 @@ focus.Value = Home; // invokes 'HandleFocus' in 'tab2'
 
 // ... or cycle through them
 focus.Next(); // invokes 'HandleFocus' in 'tab3', sets Value to 'Profile'
+focus.Next(TransitionMode.Loop); // invokes 'HandleFocus' in 'tab1', sets Value to 'Shop'
 ```
 
 ## References
