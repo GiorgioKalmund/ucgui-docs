@@ -4,7 +4,7 @@ title: InputComponent
 description: Text input based on TextMeshPro
 ---
 
-> extends [ImageComponent](image-component.md) implements [IStylable\<InputComponent, InputStyle\>](../interfaces/istylabe.md), [IFocusable](../interfaces/ifocusable.md), [ICopyable\<InputComponent\>]()
+> extends [ImageComponent](image-component.md) implements [IStylable\<InputComponent, InputStyle\>](../interfaces/istylabe.md), [IFocusable](../interfaces/ifocusable.md), [ICopyable\<InputComponent\>](../interfaces/icopyable.md)
 
 ## Description
 

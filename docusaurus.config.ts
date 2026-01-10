@@ -181,8 +181,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Giorgio Kalmund. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.palenight,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.xxx, // TODO
+      darkTheme: prismThemes.xxx, // TODO
       additionalLanguages: ['csharp'],
     },
   } satisfies Preset.ThemeConfig,

@@ -3,7 +3,7 @@ title: SpacerComponent
 description: A flexible space that expands along the axis of its containing stack layout.
 ---
 
-> extends [BaseComponent]() implementes [IEnabled](../../interfaces/irenderable.md), [IRenderable](../../interfaces/icopyable.md)
+> extends [BaseComponent](../base-component.md) implementes [IEnabled](../../interfaces/irenderable.md), [IRenderable](../../interfaces/icopyable.md)
 
 ## Description
 

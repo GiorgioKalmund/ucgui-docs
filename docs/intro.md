@@ -22,8 +22,8 @@ Simple UIs can easily be created in the editor, however they often need assistan
 This is where UCGUI jumps in.
 Building on top of [Unity's built in uGUI components](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/index.html) UCGUI offers easy access to a variety of basic components as well as additionally adding fully custom and new concepts and components.
 
-UCGUI's built in tools allow easy and accessible creation of [Text](./components/text-component.md), [Images](./components/image-component.md), [Buttons](./components/button-component.md), [Input](./components/input-component.md), [Sliders](./components/slider-component.md), [Views](), [Layouts](./category/layouts/) and so much more.
-Everything is based on a singular [BaseComponent]() class and every class is created in such a way that it can be easily inherited from and expanded upon.
+UCGUI's built in tools allow easy and accessible creation of [Text](./components/text-component.md), [Images](./components/image-component.md), [Buttons](./components/button-component.md), [Input](./components/input-component.md), [Sliders](./components/slider-component.md), [Views](./components/views/view-component.md), [Layouts](./category/layouts/) and so much more.
+Everything is based on a singular [BaseComponent](./components/base-component.md) class and every class is created in such a way that it can be easily inherited from and expanded upon.
 
 The main benefit comes from inherent code-based control over your UI at runtime, allowing dynamic UI combinations to be created faster and frictionless.
 

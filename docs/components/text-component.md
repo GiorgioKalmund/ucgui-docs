@@ -43,7 +43,7 @@ UI.Text("Hello, Mercury!")
 
 ## References
 
-This component is referenced by: [`LabelComponent`](./label-component.md), [`InputComponent`]().
+This component is referenced by: [`LabelComponent`](./label-component.md), [`InputComponent`](./input-component.md).
 
 
 ## Implementation

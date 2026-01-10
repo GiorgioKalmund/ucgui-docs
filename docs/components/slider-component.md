@@ -4,7 +4,7 @@ title: SliderComponent
 description: Configurable slider based on Unity's Slider component
 ---
 
-> extends [BaseComponent]() implements [IStylable\<SliderComponent, SliderStyle\>](../interfaces/istylabe.md)
+> extends [BaseComponent](./base-component.md) implements [IStylable\<SliderComponent, SliderStyle\>](../interfaces/istylabe.md)
 
 ## Description
 

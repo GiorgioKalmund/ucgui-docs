@@ -24,7 +24,7 @@ spacer.Render();
 
 ## References
 
-This interface is implemented by: [`SpacerComponent`](../components/layouts/spacer-component.md), [`AbstractViewComponent`]().
+This interface is implemented by: [`SpacerComponent`](../components/layouts/spacer-component.md), [`AbstractViewComponent`](../components/views/abstract-view-component.md).
 
 ## Implementation
 

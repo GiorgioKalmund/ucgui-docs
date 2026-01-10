@@ -4,7 +4,7 @@ title: ScrollViewComponent
 description: Scroll area based on Unity's ScrollView component
 ---
 
-> extends [BaseComponent]() implements [IPointerEnterHandler](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/EventSystems.IPointerEnterHandler.html), [IPointerExitHandler](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/EventSystems.IPointerExitHandler.html), [IEnabled](../interfaces/ienabled.md)
+> extends [BaseComponent](./base-component.md) implements [IPointerEnterHandler](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/EventSystems.IPointerEnterHandler.html), [IPointerExitHandler](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/EventSystems.IPointerExitHandler.html), [IEnabled](../interfaces/ienabled.md)
 
 ## Description
 

@@ -60,6 +60,13 @@ value. This allows for easy control the internal FocusGroup's active member: sim
 'Value' to the new desired enum member and the corresponding `IFocusable` is focused.
 This also works vice versa.
 
+This value can be directly assigned when creating a FocusState. It will default to `null` if 
+no value is passed into the constructor.
+
+```csharp title="Default Value Initialization"
+FocusState<MyEnum> simple = new FocusState<MyEnum>(MyEnum.Value1);
+```
+
 :::important
 
 When joining a FocusState a member's FocusGroup is automatically assigned based on a unique identifier. 
@@ -133,7 +140,7 @@ focus.Next(TransitionMode.Loop); // invokes 'HandleFocus' in 'tab1', sets Value 
 
 ## References
 
-This interface is implemented by: [`ButtonComponent`](../components/button-component.md), [`InputComponet`](../components/input-component.md).
+This interface is implemented by: [`ButtonComponent`](../components/button-component.md), [`InputComponent`](../components/input-component.md).
 
 ## Implementation
 
