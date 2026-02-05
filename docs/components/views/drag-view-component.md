@@ -32,6 +32,7 @@ UI.DragView(canvas, v => { // optionally directly link to canvas
             .Offset(120, -20),
         // ...
     );
+    v.Bounds(new Vector2(_boundsWidth, _boundsHeight));
 }).Size(_width, _height);
 ```
 However for more complex and reusable scenarios you might want to store the contents somewhere in a dedicated class:
@@ -42,11 +43,11 @@ using UCGUI;
 class MyViewComponent : DragViewComponent
 {
     private TextComponent title
-    private string titleString = "<no title>";
+    private string titleString = "Lil Whip's Ice Cream";
 
-    // create initial configuration
-    public override void CreateView() { 
-        base.CreateView(); // always call base first
+    // create initial configuration durig 'Awake'
+    public override void Create() { 
+        base.Create(); // always call base first
 
         ImageComponent iceLogo = UI.Image(_iceCreamCone)
             .Pivot(PivotPosition.UpperLeft)
@@ -61,6 +62,11 @@ class MyViewComponent : DragViewComponent
         // ...
 
         this.Size(600, 800);
+    }
+
+    // apply additional configuration during 'Start'
+    public override void Initialize() {
+
     }
     
     // called every time the view opens
