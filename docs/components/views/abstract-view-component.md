@@ -55,7 +55,7 @@ Two for generic open and close:
 1. `OnOpen`     - Fires every time the view transitions from being **closed** to being **open**.
 2. `OnClose`    - Fires every time the view transitions from being **open** to being **closed**.
 
-And another two for notifying when the view has become relevant inside of a [ViewStack](#ViewStack):
+And another two for notifying when the view has become relevant inside of a [ViewStack](#viewstacks):
 
 3. `OnStackReveal`  - Fires every time the view is part of a stack and has been **revealed by a pop**, i.e. is now on top of the stack.
 4. `OnStackHide`    - Fires every time the view has been **hidden by a pushed** view, i.e. now directly under the top of the stack.
