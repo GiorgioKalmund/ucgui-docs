@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position 1
 title: AbstractViewComponent
 description: Base elements for all views 
 ---
@@ -105,9 +105,7 @@ class MyViewComponent : AbstractViewComponent
     private string titleString = "Lil Whip's Ice Cream";
 
     // create initial configuration during 'Awake'
-    public override void Create() { 
-       base.Create(); // always call base first
-
+    protected override void Create() { 
         ImageComponent iceLogo = UI.Image(_iceCreamCone)
             .Pivot(PivotPosition.UpperLeft)
             .Offset(20, -20)
@@ -124,7 +122,7 @@ class MyViewComponent : AbstractViewComponent
     }
 
     // apply additional configuration during 'Start'
-    public override void Initialize() {
+    protected override void Initialize() {
 
     }
     

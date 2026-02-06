@@ -46,7 +46,7 @@ class MyViewComponent : DragViewComponent
     private string titleString = "Lil Whip's Ice Cream";
 
     // create initial configuration durig 'Awake'
-    public override void Create() { 
+    protected override void Create() { 
         base.Create(); // always call base first
 
         ImageComponent iceLogo = UI.Image(_iceCreamCone)
@@ -65,7 +65,7 @@ class MyViewComponent : DragViewComponent
     }
 
     // apply additional configuration during 'Start'
-    public override void Initialize() {
+    protected override void Initialize() {
 
     }
     
