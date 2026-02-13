@@ -4,14 +4,14 @@ description: Unified, preset-based styling options for components
 ---
 
 > where `T` extends `MonoBehaviour` \
-> where `TStyle` extends `AbstractStyle\<T, TStyle\>`
+> where `TStyle` extends `AbstractStyle<T, TStyle>`
 
 ## Description
 
 The IStylable interface aims to provide an easy way to save and load presets for configuration of your components.
 
 Classes making use of this interface are required to implement a given `Style(TStyle)` 
-function which takes in any `AbstractStyle` and applies it to the component.
+function which takes in any [AbstractStyle](../styles/abstract-style.md) and applies it to the component.
 
 A style is essentially just a shorthand for a configuration of a component. 
 It can be as simple or complex as you like!
