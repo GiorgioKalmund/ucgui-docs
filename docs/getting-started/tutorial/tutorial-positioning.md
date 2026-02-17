@@ -10,7 +10,7 @@ of the screen, not just the center.
 Let's go over some of the basic positioning commands and what they do.
 We will use a simple rectangle to show how the different commands and their potential
 combinations affect the positioning of objects within their parent's bounds.
-The parent is sized exactly to the scale of the grid. In this case
+The parent is sized exactly to the scale of the grid. In this specific example 
 the rectangle is 100x100 and the parent 500x500.
 
 > Default at (0,0)
@@ -36,7 +36,7 @@ sets the pivot of the object. Can be a combination of fixed pivots in the vertic
 (`Upper`, `Middle`, `Lower`) and horizontal (`Left`, `Center`, `Right`) directions, or
 a custom Vector2.
 
-Set the bool `alsoMoveAnchor` to additionally move the anchor of the object itself.
+Set the bool `alsoMoveAnchor` to additionally move the [anchor](#anchoredtopivotposition) of the object itself.
 
 > Pivot(PivotPosition.MiddleRight, alsoMoveAnchor=true) 
 ![Pos](../../../static/img/screenshot/positioning/pivot_and_anchor.png)

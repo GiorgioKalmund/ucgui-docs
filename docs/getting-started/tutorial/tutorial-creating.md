@@ -75,7 +75,7 @@ public override void GetCanvas(){
 The 'Create' method might seem pretty straight forward. You create a TextComponent which
 contains the desired string and parent it to the `canvas` reference. \
 However where does this reference come from? This is where 'GetCanvas' comes in.
-**You decide** how to you want to return a valid canvas (if any), searching for it 
+**You decide** how you want to return a valid canvas (if any). Searching for it 
 in the parent is not optimal but a quick and easy solution if you have set up the hierarchy correctly.
 This method will initialize the 'canvas' member, allowing 'Create' to access it.
 
@@ -101,9 +101,9 @@ all of your problems (_at least for this UI example, not in real life :/_).
 This where the fluent pattern jumps in. UCGUI makes use of a generic extension class 
 which allows all components to have certain shared function available to them. 'Parent' 
 is one of them for example. However, some functions are also inside the classes themselves
-and thus limited to its instances.
+and thus limited to their respective instances.
 
-Let's expand on our previous example and address all of your hypothetical concerns:
+Let's expand on our previous example and address all of your hypothetical UI concerns:
 
 ```csharp
 // ... 
@@ -125,16 +125,16 @@ _Ahhh_, much better! As you can see, the fluent pattern allows us to easily chai
 styling options without having to re-reference the object multiple times.
 
 Here `FitToContents`, `FontSize` and `Bold` are TextComponent-specific, whereas 
-'Parent' can be universally applied to any component.
+'Parent' can be applied universally to any component.
 
 'FitToContents' simply tells the rect of the text to adapt to the preferred 
 size of the text itself, removing our weird line-wrap issues from before. 
 'FontSize' and 'Bold' should be self-explanatory.
 
-Perfect. Now we know how to display some basic UI to the screen!
+Perfect. Now we know how to display some basic text on the screen!
 A small recap of what we have learnt so far:
 
 - Screens server as a mediation layer between the editor and your UCGUI interface and can be initialized with a reference to the parent canvas.
 - UCGUI uses the fluent pattern for almost all of the configuration of components, allowing for quick and simple modifications.
 - The static `UI` class offers a lot of preset builders, like 'UI.Text(...)', for quick creation of UCGUI's default components.
-- Setting the parent for any component is **crucial**! Do not forget it.
+- Setting the parent for any component is **crucial**! Do not forget it, otherwise your element might not be visible!
