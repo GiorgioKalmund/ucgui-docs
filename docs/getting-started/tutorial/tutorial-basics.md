@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-title: Tutorial - Basics
+title: Tutorial - UCGUI Philosphy
 ---
 
 ## Philosphy and Core Principles
 
 Before we take a look at some code let's first quickly explore some of the philosophy 
 and core principles of UCGUI. I promised less yapping but I want to get some stuff
-of my chest and explain some of the decisions made before we take a look at some 
+of my chest and explain some of the decisions I have made before we take a look at some 
 code. If this seems boring to you (_look at how long this section is! omg!!!_), feel 
 free to [jump ahead](./tutorial-creating.md).
 
