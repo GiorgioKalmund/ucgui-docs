@@ -13,14 +13,16 @@ combinations affect the positioning of objects within their parent's bounds.
 The parent is sized exactly to the scale of the grid. In this specific example 
 the rectangle is 100x100 and the parent 500x500.
 
-> Default at (0,0)
-![Pos](../../../static/img/screenshot/positioning/default.png)
+> Default @ (0,0)
+
+![Default](../../../static/img/screenshot/positioning/default.png)
 
 ### `Pos(Vector2) / Pos(float, float)` 
 sets the anchored position of the element. The anchored position always describes the 
 position coordinates relative to the objects **direct** parent. The first coordinate describes the x, the second the y direction.
 
-> Pos(100, 100) 
+> Pos(100, 100)
+
 ![Pos](../../../static/img/screenshot/positioning/pos.png)
 
 
@@ -29,7 +31,8 @@ offsets the anchored position of an element relative to its current position.
 You can also use the shorthands `OffsetY(float)` and `OffsetX(float)` to add offset in only one specific dimension.
 
 > Pos(100, 100) + Offset(0, -50) = (100, 50)
-![Pos](../../../static/img/screenshot/positioning/offset_after_pos.png)
+
+![Offset](../../../static/img/screenshot/positioning/offset_after_pos.png)
 
 ### `Pivot(PivotPosition, bool?) / PivotPosition(Vector2, bool?)`
 sets the pivot of the object. Can be a combination of fixed pivots in the vertical 
@@ -39,10 +42,12 @@ a custom Vector2.
 Set the bool `alsoMoveAnchor` to additionally move the [anchor](#anchoredtopivotposition) of the object itself.
 
 > Pivot(PivotPosition.MiddleRight, alsoMoveAnchor=true) 
-![Pos](../../../static/img/screenshot/positioning/pivot_and_anchor.png)
+
+![PivotAndAnchor](../../../static/img/screenshot/positioning/pivot_and_anchor.png)
 
 > Pivot(PivotPosition.MiddleRight, alsoMoveAnchor=false) 
-![Pos](../../../static/img/screenshot/positioning/pivot.png)
+
+![Pivot](../../../static/img/screenshot/positioning/pivot.png)
 
 :::important
 
@@ -64,7 +69,7 @@ is centered on the square, this leads to use only seeing the left half of it as 
 right half is out of bounds._
 
 > AnchoredTo(PivotPosition.MiddleRight) 
-![Pos](../../../static/img/screenshot/positioning/anchor.png)
+![Anchor](../../../static/img/screenshot/positioning/anchor.png)
 
 :::tip
 
@@ -78,22 +83,22 @@ of the red square and try understanding how each command affects its position!
 <details>
     <summary>Code for this Setup</summary>
     ```csharp
-        /* Grid Background */
-        UI.Grid(GridLayoutGroup.Constraint.FixedColumnCount, 5, grid =>
-        {
-            grid.CellSize(100, 100);
-            for (int y = 0; y < 5; y++)
-                for (int x = 0; x < 5; x++)
-                    grid.Add(UI.Image((x + y) % 2 == 0 ? Color.gray2 : Color.gray1));
-        }).Parent(canvas);
-        
-        /* Parent */
-        var parent = UI.Image(Color.clear).Parent(canvas).Size(500, 500);
+    /* Grid Background */
+    UI.Grid(GridLayoutGroup.Constraint.FixedColumnCount, 5, grid =>
+    {
+        grid.CellSize(100, 100);
+        for (int y = 0; y < 5; y++)
+            for (int x = 0; x < 5; x++)
+                grid.Add(UI.Image((x + y) % 2 == 0 ? Color.gray2 : Color.gray1));
+    }).Parent(canvas);
+    
+    /* Parent */
+    var parent = UI.Image(Color.clear).Parent(canvas).Size(500, 500);
 
-        /* Square */
-        UI.Image(Color.red)
-            // TODO Positioning
-            .Parent(parent);
+    /* Square */
+    UI.Image(Color.red)
+        // TODO Positioning
+        .Parent(parent);
     ```
 
     For more information about the `UI.Image` initializer and other UI elements

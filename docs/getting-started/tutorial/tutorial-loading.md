@@ -21,10 +21,10 @@ but naive, examples.
 Suppose you want to change the font of your text. No special request; no special answer.
 Changing the font is as simple as calling `.Font(...)` on any TextComponent! 
 However, how do we tell the the function _where_ to grab our font asset from? UCGUI makes
-use of [TextMeshPro]() under the hood for all text-based elements, and thus a [TMP_FontAsset]() 
+use of [TextMeshPro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.1/manual/index.html) under the hood for all text-based elements, and thus a [TMP_FontAsset](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/api/TMPro.TMP_FontAsset.html) 
 is required to change the font of your text. 
 
-As you might know, the `Resources API` allows for dynamic loading of such anything which is located
+As you might know, the [Resources API](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Resources.html) allows for dynamic loading of such anything which is located
 in the your `<Project>/Assets/Resources/` folder. We can make use of it to set the font of 
 our text:
 
@@ -129,11 +129,3 @@ What we have learnt this section:
     with 9-sliced sprites.
     - How the MissingTexture2DLocation can help us catch invalid textures.
 
-
-:::note horray!
-
-_Thats it with the tutorial for now. If you have something in mind I'd suggest to try and start prototyping it with UCGUI and see how it goes. There
-are also some aspects and functionalities of UCGUI which have not been mentioned in this tutorial. Take a look at the individual docs pages of all components to get a more
-in depth and comprehensive overview!_
-
-:::

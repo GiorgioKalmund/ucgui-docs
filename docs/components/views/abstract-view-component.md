@@ -60,7 +60,7 @@ And another two for notifying when the view has become relevant inside of a [Vie
 3. `OnStackReveal`  - Fires every time the view is part of a stack and has been **revealed by a pop**, i.e. is now on top of the stack.
 4. `OnStackHide`    - Fires every time the view has been **hidden by a pushed** view, i.e. now directly under the top of the stack.
 
-*But what even is a ViewStack? The following section will explain more about their behaviours and capabilities.*
+*But what even is a ViewStack?*
 
 ## ViewStacks
 
