@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkucgui_docs=self.webpackChunkucgui_docs||[]).push([["1793"],{4698(e){e.exports=JSON.parse('{"metadata":{"permalink":"/ucgui-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

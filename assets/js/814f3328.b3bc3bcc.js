@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkucgui_docs=self.webpackChunkucgui_docs||[]).push([["1833"],{5513(s){s.exports=JSON.parse('{"title":"Recent posts","items":[]}')}}]);
