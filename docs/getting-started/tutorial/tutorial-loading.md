@@ -1,11 +1,11 @@
 ---
 sidebar_position: 6
-title: Tutorial - Loading Assets
+title: Loading Assets
 ---
 
 In our previous example we only used some simple colors and the default font
-for our components. This won't cut for most use cases as you most probably want your
-own font, images, button, etc.
+for our components. 
+This won't it cut for most use cases as you most probably want your own font, images, buttons, etc.
 
 As UCGUI has no visual no editor to do any of those things, one naturally might
 come to the conlcusion that there needs to be some sort of functionality
@@ -18,7 +18,7 @@ to achieve the same result. _Indeed!_
 Before we dive into some more convenient workflows, let's start with some very simple,
 but naive, examples.
 
-Suppose you want to change the font of your text. No special request; no special answer.
+Suppose you want to change the font of your text. No special request; no special solution.
 Changing the font is as simple as calling `.Font(...)` on any TextComponent! 
 However, how do we tell the the function _where_ to grab our font asset from? UCGUI makes
 use of [TextMeshPro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.1/manual/index.html) under the hood for all text-based elements, and thus a [TMP_FontAsset](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/api/TMPro.TMP_FontAsset.html) 
@@ -45,7 +45,7 @@ place to store the font, allowing you to access it. Also too much effort.
 
 The TextComponent has a built in solution: `GlobalFont` is a static member (and method) which can be initialized 
 **once**, and then applies the font automagically to every TextComponent which is instantiated afterwards. 
-This removes our '.Font' calls and we never have to remember to apply it to every single text, button, label, textfield, etc.
+This removes our `.Font(...)` calls and we never have to remember to apply it to every single text, button, label, textfield, etc.
 
 ```csharp
 
@@ -55,13 +55,18 @@ for (int i = 0; i < 5; i++){
 }
 ```
 
-Using this technique, **all** texts in the example above will have our custom font applied, whilst only requiring 
-a loading overhead once.
+Using this technique, **all** texts in the example above will have our custom font applied, whilst only requiring a loading overhead once.
 
 :::warning
 
-UCGUI heavily recommends using the GlobalFont variant as loading from the Resources for every text instantiation 
-is **very performance heavy**.
+UCGUI heavily recommends using the GlobalFont variant as loading from the Resources for every text instantiation is **very performance heavy**.
+This method also allows you to assign the font in any way desired, if you have other custom methods to load assets for your game.
+
+:::
+
+:::tip
+
+If you want to uniformly style your text, and components in general, in additional ways, also take a look at [styles](../../category/styles), which allow you to remove even more duplicate code and help you iterate more easily.
 
 :::
 
@@ -106,13 +111,16 @@ As you can see, UCGUI correctly loaded our wallpaper and the sprite for our rect
 tried loading an invalid path to an image (either because we tried to load a Sprite but the image was marked as Default, vice versa, etc.)
 UCGUI displays the texture defined as your 'Missing Texture'. 
 
-For the 9-Sliced image we have to apply a slightly differnt flow to have it be properly displayed in our user interface.
+For the 9-Sliced image we have to apply a slightly different flow to have it be properly displayed in our user interface.
 Most importantly we need to load it **directly** (as the method states), instead of indirectly so we can 
 keep its 9-sliced configuration and options. Then, we need to tell the renderer to treat it as a sliced
 image and how 'strong' the slicing should be.
 If you are unsure of what exact value to use the the pixels per unit multiplier, try building your UI once and then
 tweaking the value in the editor. It can be hard to guess what exact values create your desired look, and this is 
 where UCGUI reaches its limits in terms of a lack of visual feedback of your UI elements.
+
+Different games and project obviously manage these types of resources in very different ways. 
+UCGUI aims to accomodate as many asset loading mechanisms and architectures as possible, also including things like texture atlases and more.
 
 :::tip
 

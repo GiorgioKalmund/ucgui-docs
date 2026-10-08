@@ -1,12 +1,12 @@
 ---
 sidebar_position: 5
-title: Tutorial - Advanced Drawing
+title: Advanced Drawing
 ---
 
-Now that we have learnt how to draw a basic 'Hello, World!' to the screen using UCGUI, 
+Now that we have learnt how to draw a basic "Hello, World!" to the screen using UCGUI, 
 and how to position components, let's take a look at some more complex scenes.
 
-In addition to the 'UI.Text(...)' initializers the 'UI' class also holds initiliazers for almost 
+In addition to the `UI.Text(...)` initializers the `UI` class also holds initiliazers for almost 
 all native components in UCGUI. 
 
 Let's re-use the screen from before and add some more elements to our interface.
@@ -39,7 +39,7 @@ In combination with the `Maximize()` call, which stretches a given component to 
 and dirty solution for a background color. As the image in our example is parented to the canvas it conveniently fills the 
 entirety of the screen's background in our desired color.
 
-:::tip important
+:::tip 
 
 **The order of parenting components determines the hierarchial layering order.**
 To create a background we thus need to parent it to the canvas first, allowing all following elements parented
@@ -57,7 +57,7 @@ You might want to build fully custom components with custom functionalities. The
 and your imagination is the only thing holding you back (_and maybe some bugs from my end, or Unity's layout system. I'm still not quite sure
 how something can be as bad as the Horizontal- and VerticalLayoutGroup MonoBehaviours_).
 
-I have created a mini example, showcasing the basic flow of how one would set up such a component. 
+We have created a mini example, showcasing the basic flow of how one would set up such a component. 
 It is probably most helpful however to simply take a look at the implementation of UCGUIs components directly.
 If you are ever unsure of how a certain component achieves something you can just `Ctrl + Left` onto the class name to
 go to the class' definition and implementation.
@@ -69,6 +69,7 @@ public class MyComponent : BaseComponent {
     
     private bool _isCool = false;
 
+    // Fluent pattern!
     public MyComponent SetCool(bool c){
         _isCool = c;
         return this;
@@ -82,7 +83,7 @@ public class MyComponent : BaseComponent {
 
 }
 ```
-Even though small this example shows a lot about the inner workings of UCGUI.
+Although small, this example shows a lot about the inner workings of UCGUI.
 
 First of all, all components share a common ancestor: the `BaseComponent`. Think of it like
 the MonoBehaviour equivalent of UCGUI. Every new script or component you might want to 
@@ -92,18 +93,16 @@ Second, we can observe the fluent pattern in action. It is actually quite trivia
 make the return type your own class name and return yourself after you have completed the functions desired
 computation.
 
-:::warning important
+:::warning 
 
 One downfall of having the fluent pattern implemented like this is that polymorphism comes to bite you 
 when you try ordering operations incorrectly. For example, if we now introduce a new component `MyComponent2`,
 which inherits from `MyComponent`, and also has a fluent-style function returning itself, we might run into some issues.
 
 When we create a new instance of our derived class it obviously has access to both methods. Its new internal 
-one and `SetCool`. However, **order of operations matter here**! If you first call the new method and afterwards
-'SetCool' everything is fine, as derived returns derived --> still has access to 'SetCool'. 
+one and `SetCool`. However, **order of operations matter here**! If you first call the new method and afterwards `SetCool` everything is fine, as derived returns derived -> still has access to `SetCool`. 
 The problem arises when we try to do it the other way around. 
-If the dervied class calls 'SetCool' first after instantiation, it will now
-be cast to an instance of 'MyComponent', which no longer has access to the fluent call of the 'MyComponent2' class.
+If the dervied class calls `SetCool` first after instantiation, it will now be cast to an instance of 'MyComponent', which no longer has access to the fluent call of the 'MyComponent2' class.
 
 There are three ways to circumvent this:
 
@@ -114,23 +113,24 @@ values to never change type. This is actually how [UCGUI's UI class](https://git
 
 :::
 
-After this pretty long warning we can now ask ourselves, 'But how can I put my component onto the screen?'.
+After this pretty long warning we can now ask ourselves, *"But how can I put my component onto the screen?"*.
 The static UI builders you have gotten to know until now are actually just wrappers around the real way of creating components in UCGUI:
 A generic instantiator.
 
 ```csharp title="Custom Component Instantiation"
-MyComponent myComponentInstance = UI.N<MyComponent>().SetCool(true).Parent(canvas);
+MyComponent myComponentInstance = UI.N<MyComponent>()
+                                    .SetCool(true)
+                                    .Parent(canvas);
 ```
 
 This generic instantiator is at the heart of UCGUI. 
-Any class inheriting from 'BaseComponent' can be instantiated via this one method.
+Any class inheriting from `BaseComponent` can be instantiated via this one method.
 The `N` stands for 'New', after which you simply insert the class name of the
 element you want to instantiate.
 
 Jumping back and taking a another look a the example higher up I want to highlight another oddity you might have realized.
 Why are we using 'Start' and not 'Awake' here? A keen reader might already have an idea, as the related issue was already hinted
 at previously. The reason is quite simple:
-
 During the 'Awake' phase of your custom component (which you can `override` from the BaseComponent, as it is marked `virtual`) `_isCool` has not yet been set to true.
 All function calls after the instantiation using '.N\<T\>' will be executed **after Awake**. Thus, we can only read out the **true
 value of '_isCool' during Start!**

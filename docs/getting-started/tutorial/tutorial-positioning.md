@@ -1,11 +1,15 @@
 ---
 sidebar_position: 4
-title: Tutorial - Positioning
+title: Positioning
 ---
 
-Now that we know how to create our first little 'Hello, World!' example
-we need to know how to position our elements at different parts
-of the screen, not just the center.
+Now that we know how to create our first little "Hello, World!" example we need to know how to position our elements on different parts of the screen, not just the center.
+
+In Unity and UCGUI the default position of an element with its anchor at the center is at the center of its parent. 
+This is why the text which we created in the previous section appeared in the center of the screen, and not the top left for example, as you might assume if you are familiar with other graphical layout systems.
+In general UI elements distinguish between an `anchoredPosition` and a `position`. 
+Unless explicitly stated otherwise, when we talk about the *"position"* of an UI elemennt we actually mean its `anchoredPosition`, which is always dependent on the *parent* and the *anchor* of the element. 
+Why and how this makes a difference will be explained in the following examples.
 
 Let's go over some of the basic positioning commands and what they do.
 We will use a simple rectangle to show how the different commands and their potential
@@ -18,8 +22,9 @@ the rectangle is 100x100 and the parent 500x500.
 ![Default](../../../static/img/screenshot/positioning/default.png)
 
 ### `Pos(Vector2) / Pos(float, float)` 
-sets the anchored position of the element. The anchored position always describes the 
-position coordinates relative to the objects **direct** parent. The first coordinate describes the x, the second the y direction.
+sets the **anchored position** of the element. The anchored position always describes the 
+position coordinates relative to the object's **direct** parent. The first coordinate describes the x, the second the y position. 
+This position is also relative to the anchor of the element, which we will see in a bit later on.
 
 > Pos(100, 100)
 
@@ -38,6 +43,7 @@ You can also use the shorthands `OffsetY(float)` and `OffsetX(float)` to add off
 sets the pivot of the object. Can be a combination of fixed pivots in the vertical 
 (`Upper`, `Middle`, `Lower`) and horizontal (`Left`, `Center`, `Right`) directions, or
 a custom Vector2.
+The pivot determines the rotational center.
 
 Set the bool `alsoMoveAnchor` to additionally move the [anchor](#anchoredtopivotposition) of the object itself.
 
@@ -52,10 +58,8 @@ Set the bool `alsoMoveAnchor` to additionally move the [anchor](#anchoredtopivot
 :::important
 
 As you can see in the image above, the square didn't actually move to the right edge
-after we set its pivot. This is because we **only** set the pivot point, not the anchor point. As the RectTransform
-did not change its coordinates, it as to visually reflect its new interpretation
-of a right-centered pivot at (0,0). This results in the _right edge_ now being at 
-the origin, seamingly shifting the square to the left.
+after we set its pivot. This is because we **only** set the pivot point, not the anchor point. 
+As the RectTransform aims to stay at its original coordinates (`(0, 0)`) it as to visually compensate for its new pivot. This results in the _right edge_ now being at the origin, seamingly shifting the square to the left.
 
 ::::
 
