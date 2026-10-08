@@ -15,7 +15,7 @@ As it extends the [SwitchLayout]() text and image can be arranged both verticall
 and horizontally, as well as reverse their order. It also automatically fits to its content
 in both directions. 
 
-There some native `LabelStyle`s which allow for [easy customization](../interfaces/istylabe.md):
+There some native [LabelStyles](../styles/label-style.md) which allow for [easy customization](../interfaces/istylabe.md):
 1. `IconAndText` (Default)
 2. `IconOnly` 
 3. `TextOnly` 

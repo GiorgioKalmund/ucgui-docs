@@ -10,8 +10,8 @@ description: A simple button based on the LabelComponent
 
 A button is essential to any user interface. The ButtonComponent makes use of the [UnityEngine.UI.Button](https://docs.unity3d.com/2018.2/Documentation/ScriptReference/UI.Button.html) under the hood for integrated functionality for most user interactions.
 
-Implementing `IStylable<ButtonComponent, ButtonStyle>` also allows for easy and reusable styling of your button. 
-With the Button inheriting from the Label, this means that all [label styles](./label-component.md) are also applicable to the Button!
+Implementing `IStylable<ButtonComponent, ButtonStyle>` also allows for easy and [reusable styling of your button](../styles/button-style.md). 
+With the Button inheriting from the Label, this means that all [label styles](../styles/label-style.md) are also applicable to the Button!
 
 ## Examples
 

@@ -19,6 +19,17 @@ This has to be done before any text is instantiated.
 
 :::
 
+Styling your text can be done using the [predefined TextStyles](../styles/text-style.md)
+, or [create your own styles](../interfaces/istylabe.md) for maximum customizability and control.
+
+:::tip
+
+Every TextComponent will default to using `TextStyle.Primary` when instantiated.
+This means you can easily [redefine](../styles/abstract-style.md#redefinition-of-existing-styles) it 
+and quickly change all text components in your game without any additional manual effort.
+
+:::
+
 ## Examples
 
 ```csharp title="Simple UI builder"

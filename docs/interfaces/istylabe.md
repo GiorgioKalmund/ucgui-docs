@@ -54,6 +54,12 @@ MyComponent fooTitle = foo.Copy();
 fooTitle.Style(PlainTitle);
 ```
 
+:::info
+
+It is highly recommended to read the [AbstractStyle](../styles/abstract-style.md) section if you haven't already.
+
+:::
+
 ## References
 
 This interface is implemented by: [`TextComponent`](../components/text-component.md), [`LabelComponent`](../components/label-component.md), [`ButtonComponent`](../components/button-component.md), [`InputComponent`](../components/input-component.md), [`SliderComponent`](../components/slider-component.md).
